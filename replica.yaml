@@ -6,13 +6,13 @@ metadata:
     app: java-app
   name: rs-java
   namespace: prodns
-  annotaions:
+  annotations:
     ecr-registry: 777014042292.dkr.ecr.ap-south-1.amazonaws.com/springpetclinic/java
 spec:
   replicas: 3
   minReadySeconds: 6
   selector:
-    matchlabels:
+    matchLabels:
       app: spc-java
   template:
     metadata:
@@ -24,6 +24,6 @@ spec:
         - name: java-pod
           image: 777014042292.dkr.ecr.ap-south-1.amazonaws.com/springpetclinic/java:latest
           ports:
-            containerPort: 80
-            protocol: TCP
+            - containerPort: 80
+              protocol: TCP
 
