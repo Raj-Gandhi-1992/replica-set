@@ -38,3 +38,11 @@ spec:
             httpGet:
               path: /
               port: 8080
+          resources:
+            requests:
+              cpu: "1800m" #1.8 CPU --m5.large - 2 CPU
+              memory: "7500Mi"  # 7.5 GB RAM --m5.large - 8 GB
+            limits:
+              cpu: "1800m"        
+              memory: "7500Mi" 
+
