@@ -24,6 +24,6 @@ spec:
         - name: java-pod
           image: 777014042292.dkr.ecr.ap-south-1.amazonaws.com/springpetclinic/java:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               protocol: TCP
 
