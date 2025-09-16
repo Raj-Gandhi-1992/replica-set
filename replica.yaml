@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    env: prod
+    app: java-app
+  name: rs-java
+  namespace: prodns
+  annotaions:
+    ecr-registry: 777014042292.dkr.ecr.ap-south-1.amazonaws.com/springpetclinic/java
+spec:
+  replicas: 3
+  minReadySeconds: 6
+  selector:
+    matchlabels:
+      app: spc-java
+  template:
+    metadata:
+      name: javapod
+      labels:
+        app: spc-java
+    spec:
+      containers:
+        - name: java-pod
+          image: 777014042292.dkr.ecr.ap-south-1.amazonaws.com/springpetclinic/java:latest
+          ports:
+            containerPort: 80
+            protocol: TCP
+
